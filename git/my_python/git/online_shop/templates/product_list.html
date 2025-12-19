@@ -15,11 +15,6 @@
             <th>Price</th>
             <th>Created</th>
             <th>Updated</th>
-            <th>Stock</th>
-            <th>Is Active</th>
-            <th>Category</th>
-            <th>Rating</th>
-            <th>Sale</th>
         </tr>
         {% for product in products %}
         <tr>
@@ -27,14 +22,8 @@
             <td>{{ product.id }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
-            <td>{{ product.updated_at }}</td>
-            <td>{{ product.created_at }}</td>
-            <td>{{ product.stock }}</td>
-            <td>{{ product.is_active }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.rating }}</td>
-            <td>{{ product.sale }}</td>
-
+            <td>{{ product.uodated }}</td>
+            <td>{{ product.created }}</td>
         </tr>
         {% endfor %}
     </table>
