@@ -16,6 +16,37 @@
             <input type="number" name="price" step="0.01"
             value="{{ product.price if product else '' }}" required>
         </lable> <br>
+
+        <lable>Description:
+            <input type="text" name="description"
+            value="{{ product.description if product else '' }}">
+        </lable> <br>
+
+        <lable>Stock:
+            <input type="number" name="stock"
+            value="{{ product.stock if product else '' }}">
+        </lable> <br>
+
+        <lable>Is Active:
+            <input type="checkbox" name="is_active"
+            {% if product and product.is_active %}checked{% endif %}>
+        </lable> <br>
+
+        <lable>Category:
+            <input type="text" name="category"
+            value="{{ product.category if product else '' }}">
+        </lable> <br>
+
+        <lable>Rating:
+            <input type="number" name="rating" step="0.1"
+            value="{{ product.rating if product else '' }}">
+        </lable> <br>
+
+        <lable>Sale:
+            <input type="checkbox" name="sale"
+            {% if product and product.sale %}checked{% endif %}>
+        </lable> <br>
+
         <button type="submit">{{ action }}</button>
     </form>
     <a href="{{ url_for('routes.product') }}">Back to List</a>
