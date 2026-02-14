@@ -20,6 +20,7 @@
             <th>Category</th>
             <th>Rating</th>
             <th>Sale</th>
+            <th>Edit</th>
         </tr>
         {% for product in products %}
         <tr>
@@ -34,7 +35,12 @@
             <td>{{ product.category }}</td>
             <td>{{ product.rating }}</td>
             <td>{{ product.sale }}</td>
-
+            <td> 
+                <a href="{{ url_for('routes.update_product', product_id=product.id) }}">Edit</a>
+                <form action="{{ url_for('routes.delete_product', product_id=product.id) }}" 
+                method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
         </tr>
         {% endfor %}
     </table>
