@@ -9,4 +9,4 @@ if __name__ == "__main__":
     #create DB tables if not exist
     with app.app_context():
         db.create_all()
-    app.run(debug=True) #дуже детально виводить помилки32323
+    app.run(debug=True) #дуже детально виводить помилки323234444
