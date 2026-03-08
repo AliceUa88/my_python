@@ -1,0 +1,4 @@
+{
+    "DB_PATH": "db/shop.db",
+    "SECRET_KEY": "MyPassword"
+}

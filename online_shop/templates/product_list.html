@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Product List</h1>
+    <a href="{{ url_for('routes.add_product') }}">Add Product</a>
+    <table border="1">
+        <tr>
+            <th>Description</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Stock</th>
+            <th>Is Active</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Sale</th>
+            <th>Edit</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.description }}</td>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.updated_at }}</td>
+            <td>{{ product.created_at }}</td>
+            <td>{{ product.stock }}</td>
+            <td>{{ product.is_active }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.rating }}</td>
+            <td>{{ product.sale }}</td>
+            <td> 
+                <a href="{{ url_for('routes.update_product', product_id=product.id) }}">Edit</a>
+                <form action="{{ url_for('routes.delete_product', product_id=product.id) }}" 
+                method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
